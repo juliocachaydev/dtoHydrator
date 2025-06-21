@@ -2,4 +2,5 @@
 - [x] H02-Write Contracts
 - [x] H03-Write Tests
 - [x] H04-Implement
-- [ ] H05-Write Documentation and Example
+- [x] H05-Write Documentation and Example
+- [x] Push to Nuget
