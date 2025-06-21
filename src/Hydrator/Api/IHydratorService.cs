@@ -7,6 +7,6 @@ namespace Hydrator.Api
     /// </summary>
     public interface IHydratorService
     {
-        Task HydrateAsync<T>(T dto) where T : IHydratableObject;
+        Task HydrateAsync<T>(T dto) where T : IHydratableValue;
     }
 }

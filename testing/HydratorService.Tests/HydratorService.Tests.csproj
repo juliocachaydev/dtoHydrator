@@ -21,8 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Hydrator\Hydrator.csproj" />
-      <ProjectReference Include="..\src\Hydrator\Hydrator.csproj" />
+      <ProjectReference Include="..\..\src\Hydrator\Hydrator.csproj" />
     </ItemGroup>
 
 </Project>

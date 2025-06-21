@@ -1,8 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hydrator", "Hydrator\Hydrator.csproj", "{61C38306-9ED2-40D1-90C1-6162D26E2F3B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F6600720-FDF9-4E31-BC0C-845E0C4173B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hydrator.Tests", "Hydrator.Tests\Hydrator.Tests.csproj", "{4AED0053-1E2B-4929-AA5D-7E17CBE5E7BE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "testing", "testing", "{52BF3226-11A7-43E8-9C9B-4272A94F668A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hydrator", "src\Hydrator\Hydrator.csproj", "{4904A7B7-B0FD-45C0-9EA9-539CA8B6BB41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HydratorService.Tests", "testing\HydratorService.Tests\HydratorService.Tests.csproj", "{C6089BC4-1CBA-4FC7-B1DA-8C2DD4970891}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,15 +14,17 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{61C38306-9ED2-40D1-90C1-6162D26E2F3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{61C38306-9ED2-40D1-90C1-6162D26E2F3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{61C38306-9ED2-40D1-90C1-6162D26E2F3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{61C38306-9ED2-40D1-90C1-6162D26E2F3B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4AED0053-1E2B-4929-AA5D-7E17CBE5E7BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4AED0053-1E2B-4929-AA5D-7E17CBE5E7BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4AED0053-1E2B-4929-AA5D-7E17CBE5E7BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4AED0053-1E2B-4929-AA5D-7E17CBE5E7BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4904A7B7-B0FD-45C0-9EA9-539CA8B6BB41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4904A7B7-B0FD-45C0-9EA9-539CA8B6BB41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4904A7B7-B0FD-45C0-9EA9-539CA8B6BB41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4904A7B7-B0FD-45C0-9EA9-539CA8B6BB41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6089BC4-1CBA-4FC7-B1DA-8C2DD4970891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6089BC4-1CBA-4FC7-B1DA-8C2DD4970891}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6089BC4-1CBA-4FC7-B1DA-8C2DD4970891}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6089BC4-1CBA-4FC7-B1DA-8C2DD4970891}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{4904A7B7-B0FD-45C0-9EA9-539CA8B6BB41} = {F6600720-FDF9-4E31-BC0C-845E0C4173B2}
+		{C6089BC4-1CBA-4FC7-B1DA-8C2DD4970891} = {52BF3226-11A7-43E8-9C9B-4272A94F668A}
 	EndGlobalSection
 EndGlobal
