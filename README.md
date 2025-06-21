@@ -18,13 +18,13 @@ handler can receive dependencies through dependency injection, making it easy to
 
 ## Features
 
-- Handler-based hydration for values
+- Handler-based hydration
 - Dependency injection support
 
 ## Getting Started
 > TODO: Add nuget here...
 
-## Setup
+## Usage
 ### Add the hydrator library via dependency injection
 
 You can pass one or more assemblies. The library will scan the assemblies for hydrator handlers.
@@ -101,6 +101,12 @@ public class InvoiceQuery
     }
 }
 ```
+
+## Important Considerations
+The Hydrator Service is registered with a scoped lifetime, meaning a new instance is created for each request.
+
+A typical pattern is to use a scoped cache service to load all necessary data up front. This cache can then be injected into each hydrator 
+handler, enabling efficient data access and reducing repeated database queries.
 
 ## Use Cases
 
