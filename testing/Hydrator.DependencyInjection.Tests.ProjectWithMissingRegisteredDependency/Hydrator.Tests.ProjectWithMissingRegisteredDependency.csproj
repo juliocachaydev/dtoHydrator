@@ -7,8 +7,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\Hydrator\Hydrator.csproj" />
+      <ProjectReference Include="..\Testing.Common\Testing.Common.csproj" />
     </ItemGroup>
+
 
 
 </Project>
