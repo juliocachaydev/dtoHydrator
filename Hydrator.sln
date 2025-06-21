@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hydrator", "src\Hydrator\Hy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HydratorService.Tests", "testing\HydratorService.Tests\HydratorService.Tests.csproj", "{C6089BC4-1CBA-4FC7-B1DA-8C2DD4970891}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{BE3425B0-ED80-4629-9CE8-C98B4DA6BE48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example_EfCore", "Example_EfCore\Example_EfCore.csproj", "{D5DA49E6-AD1F-4ECD-A542-655BE9C79D71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,9 +26,14 @@ Global
 		{C6089BC4-1CBA-4FC7-B1DA-8C2DD4970891}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6089BC4-1CBA-4FC7-B1DA-8C2DD4970891}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6089BC4-1CBA-4FC7-B1DA-8C2DD4970891}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5DA49E6-AD1F-4ECD-A542-655BE9C79D71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5DA49E6-AD1F-4ECD-A542-655BE9C79D71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5DA49E6-AD1F-4ECD-A542-655BE9C79D71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5DA49E6-AD1F-4ECD-A542-655BE9C79D71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4904A7B7-B0FD-45C0-9EA9-539CA8B6BB41} = {F6600720-FDF9-4E31-BC0C-845E0C4173B2}
 		{C6089BC4-1CBA-4FC7-B1DA-8C2DD4970891} = {52BF3226-11A7-43E8-9C9B-4272A94F668A}
+		{D5DA49E6-AD1F-4ECD-A542-655BE9C79D71} = {BE3425B0-ED80-4629-9CE8-C98B4DA6BE48}
 	EndGlobalSection
 EndGlobal
