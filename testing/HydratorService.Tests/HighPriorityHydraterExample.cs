@@ -38,7 +38,7 @@ public static class LowPriorityHydraterExample
         public Task HydrateAsync(ILowPriorityExample dto)
         {
             // Divisor and Dividend has values set before by the high priority handler: HighPriorityHydraterExample.Handler
-            dto.Quotient = dto.Divisor / dto.Dividend;
+            dto.Quotient = dto.Dividend / dto.Divisor;
 
             return Task.CompletedTask;
         }
