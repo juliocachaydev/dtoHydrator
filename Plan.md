@@ -1,5 +1,5 @@
 - [x] H01-Setup projects
 - [x] H02-Write Contracts
-- [ ] H03-Write Tests
+- [x] H03-Write Tests
 - [ ] H04-Implement
 - [ ] H05-Write Documentation
