@@ -1,8 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <PackageId>DtoHydrator.06.21.25.Julio.Cachay</PackageId>
         <TargetFramework>netstandard2.1</TargetFramework>
         <Nullable>enable</Nullable>
+        <PackageId>Hydrator</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>Julio Cachay G.</Authors>
+        <Company>Julio Cachay Developer</Company>
+        <Description>A C# library that hydrates a DTO using the Separation of Concerns (SoC) principle,
+            where each handler is responsible for hydrating a specific part of the DTO. Multiple handlers
+            can contribute to the hydration process, ensuring modular and maintainable code.</Description>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/juliocachaydev/dtoHydrator/wiki</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/juliocachaydev/dtoHydrator</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>hydrator;viewmodel;dotnet;modular;open-source</PackageTags>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <ItemGroup>
