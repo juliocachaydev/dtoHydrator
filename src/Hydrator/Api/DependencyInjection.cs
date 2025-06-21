@@ -6,7 +6,7 @@ namespace Hydrator.Api
 {
     public static class DependencyInjection
     {
-        public static void AddHydrator(this IServiceCollection services, Action<HydratorOptions> options,
+        public static void AddHydrator(this IServiceCollection services,
             params Assembly[] assembliesToScan)
         {
         }

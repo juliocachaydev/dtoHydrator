@@ -14,11 +14,7 @@ public class HydratorServiceTests : DiContainerTestBase
 
         var serviceProvider = SetupServices(services =>
         {
-            services.AddHydrator(o =>
-            {
-                o.EnsureAllDependenciesAreRegistered = true;
-                o.AssertEachHydratableValueHasHandler = true;
-            }, Assembly.GetExecutingAssembly());
+            services.AddHydrator(Assembly.GetExecutingAssembly());
         });
 
         using var scope = serviceProvider.CreateScope();
