@@ -14,7 +14,7 @@ public class Invoice
 
     public Invoice(Guid id)
     {
-        
+        Id = id;
     }
     
     public void AddLine(Guid lineId, string productName, int quantity, decimal unitPrice)

@@ -1,4 +1,5 @@
 ﻿using Example_EfCore.Domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace Example_EfCore.Infrastructure;
 
@@ -17,12 +18,18 @@ public interface IMockDataService
         
         public async Task CreateMockDataAsync()
         {
+            _db.Invoices.RemoveRange(_db.Invoices.Include(e => e.Lines).ToArray());
+            _db.Payments.RemoveRange(_db.Payments.ToArray());
+            _db.Shipments.RemoveRange(_db.Shipments.ToArray());
+            
+            await _db.SaveChangesAsync();
+            
             var invoice = new Invoice(Guid.NewGuid());
             
             invoice.AddLine(Guid.NewGuid(), "Bolt #4 x box of 100", 100, 9.99m);
             invoice.AddLine(Guid.NewGuid(), "Nut #4 x box of 100", 50, 4.99m);
 
-            var payment1 = new Payment(Guid.NewGuid(), invoice.Id, 999.99m);
+            var payment1 = new Payment(Guid.NewGuid(), invoice.Id, 115.99m);
             var payment2 = new Payment(Guid.NewGuid(), invoice.Id, 328.99m);
             
             var shipment1 = new Shipment(

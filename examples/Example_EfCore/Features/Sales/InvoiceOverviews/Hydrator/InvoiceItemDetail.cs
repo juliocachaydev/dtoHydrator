@@ -1,14 +1,7 @@
 ﻿namespace Example_EfCore.Features.Sales.InvoiceOverviews;
 
-public interface IInvoiceItemDetailsRootData
-{
-    public Guid InvoiceId { get;}
-    InvoiceItemDetail[] InvoiceItemDetails { get; set; }
-}
-
 public record InvoiceItemDetail : IInvoiceItemDetailQuantityShipped
 {
-    public required Guid InvoiceId { get; init; }
         
     public required Guid LineId { get; init; }
 
@@ -20,7 +13,7 @@ public record InvoiceItemDetail : IInvoiceItemDetailQuantityShipped
 
     public required int QuantityOrdered { get; init; }
 
-    public required int QuantityShipped { get; init; }
+    public required int QuantityShipped { get; set; }
 
     public int PendingToShip => QuantityOrdered - QuantityShipped;
 }
