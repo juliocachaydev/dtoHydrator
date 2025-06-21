@@ -10,15 +10,14 @@ public static class CustomerNameWhoseHandlerIsMissingADependency
  */
     public interface ICustomerName : IHydratableValue
     {
-        
     }
 
     public class Handler : IHydratorHandler<ICustomerName>
     {
         public Handler(SomeDependency someDependency)
         {
-            
         }
+
         public Task HydrateAsync(ICustomerName dto)
         {
             throw new NotImplementedException();

@@ -7,7 +7,6 @@ namespace HydratorService.Tests;
 
 public class HydratorServiceTests : DiContainerTestBase
 {
-
     [Fact]
     public async Task CanHydrate()
     {
@@ -36,14 +35,14 @@ public class HydratorServiceTests : DiContainerTestBase
         var dto = new DtoExample();
 
         // ***** ACT *****
-        
+
         await sut.HydrateAsync(dto);
 
         // ***** ASSERT *****
-        
+
         Assert.True(dto.Dividend > 0);
         Assert.True(dto.Divisor > 0);
-        
+
         Assert.Equal(dto.Dividend / dto.Divisor, dto.Quotient);
     }
 }

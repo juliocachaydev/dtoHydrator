@@ -18,11 +18,13 @@ public class DependencyInjectionTests : DiContainerTestBase
         bool configurationRequiresAssertion, bool oneHandlerIsMissingInSpecifiedAssembly, bool shouldThrowException)
     {
         // ***** ARRANGE *****
-        
+
         // In this test, we will check if the library asserts that each HydratableValue has a handler. We do so by adding the library using a different
         // assembly for each test case.
-        var assemblyToScan = oneHandlerIsMissingInSpecifiedAssembly ? typeof(CustomerNameWithoutHandlerHydrator).Assembly : Assembly.GetAssembly(
-            typeof(CustomerName));
+        var assemblyToScan = oneHandlerIsMissingInSpecifiedAssembly
+            ? typeof(CustomerNameWithoutHandlerHydrator).Assembly
+            : Assembly.GetAssembly(
+                typeof(CustomerName));
 
         // ***** ACT *****
 
@@ -69,21 +71,16 @@ public class DependencyInjectionTests : DiContainerTestBase
             {
                 SetupServices(services =>
                 {
-                    if (!oneHandlerIsMissingADependency)
-                    {
-                        services.AddScoped<SomeDependency>();
-                    }
+                    if (!oneHandlerIsMissingADependency) services.AddScoped<SomeDependency>();
 
-                    services.AddHydrator(options =>
-                        {
-                            options.EnsureAllDependenciesAreRegistered = configurationRequiresAssertion;
-                        },
+                    services.AddHydrator(
+                        options => { options.EnsureAllDependenciesAreRegistered = configurationRequiresAssertion; },
                         Assembly.GetAssembly(typeof(CustomerNameWhoseHandlerIsMissingADependency))!);
                 });
             });
 
         // ***** ASSERT *****
-        
+
         if (shouldThrowException)
         {
             Assert.NotNull(result);
@@ -103,15 +100,12 @@ public class DependencyInjectionTests : DiContainerTestBase
          * We are going to test that the services is scoped. To do this, we will get two instances from the same services scope and verify
          * they are the same instance, then, we will get two instances from different service scopes and verify they are different.
          */
-        
+
         // ***** ARRANGE *****
-        
+
         var serviceProvider = SetupServices(services =>
         {
-            services.AddHydrator(options =>
-                {
-                
-                },
+            services.AddHydrator(options => { },
                 Assembly.GetAssembly(typeof(CustomerName))!);
         });
 
@@ -121,7 +115,7 @@ public class DependencyInjectionTests : DiContainerTestBase
 
         var instance1 = scope1.ServiceProvider.GetRequiredService<IHydratorService>();
         var instance2 = scope1.ServiceProvider.GetRequiredService<IHydratorService>();
-        
+
         using var scope2 = serviceProvider.CreateScope();
         var instanceFromDifferentScope = scope2.ServiceProvider.GetRequiredService<IHydratorService>();
 
@@ -129,11 +123,10 @@ public class DependencyInjectionTests : DiContainerTestBase
 
         // Same scope, same instance (Not a transient)
         Assert.Same(instance1, instance2);
-        
+
         // Different scope, different instance (not a singleton)
         Assert.NotSame(instance1, instanceFromDifferentScope);
-        
-        // Because is not transient, and because is not singleton, then it must be scoped.
 
+        // Because is not transient, and because is not singleton, then it must be scoped.
     }
 }

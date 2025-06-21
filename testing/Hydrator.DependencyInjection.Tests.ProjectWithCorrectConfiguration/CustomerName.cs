@@ -10,7 +10,6 @@ public static class CustomerName
  */
     public interface ICustomerName : IHydratableValue
     {
-        
     }
 
     public class Handler : IHydratorHandler<ICustomerName>

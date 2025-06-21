@@ -7,7 +7,7 @@ public static class HighPriorityHydraterExample
     public interface IHighPriorityExample : IHighPriorityHydratableValue
     {
         decimal Dividend { get; set; }
-        
+
         decimal Divisor { get; set; }
     }
 
@@ -27,9 +27,9 @@ public static class LowPriorityHydraterExample
     public interface ILowPriorityExample : IHydratableValue
     {
         decimal Dividend { get; }
-        
+
         decimal Divisor { get; }
-        
+
         decimal Quotient { get; set; }
     }
 
@@ -39,7 +39,7 @@ public static class LowPriorityHydraterExample
         {
             // Divisor and Dividend has values set before by the high priority handler: HighPriorityHydraterExample.Handler
             dto.Quotient = dto.Divisor / dto.Dividend;
-            
+
             return Task.CompletedTask;
         }
     }

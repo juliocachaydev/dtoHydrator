@@ -4,6 +4,5 @@ namespace Hydrator.Api
 {
     public class HydratorException : Exception
     {
-        
     }
 }

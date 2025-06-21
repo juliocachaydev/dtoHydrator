@@ -10,6 +10,5 @@ public static class CustomerNameWithoutHandlerHydrator
  */
     public interface ICustomerName : IHydratableValue
     {
-        
     }
 }
