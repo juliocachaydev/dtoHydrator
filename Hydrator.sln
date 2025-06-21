@@ -1,8 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hydrator", "Hydrator\Hydrator.csproj", "{61C38306-9ED2-40D1-90C1-6162D26E2F3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hydrator.Tests", "Hydrator.Tests\Hydrator.Tests.csproj", "{4AED0053-1E2B-4929-AA5D-7E17CBE5E7BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61C38306-9ED2-40D1-90C1-6162D26E2F3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61C38306-9ED2-40D1-90C1-6162D26E2F3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61C38306-9ED2-40D1-90C1-6162D26E2F3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61C38306-9ED2-40D1-90C1-6162D26E2F3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AED0053-1E2B-4929-AA5D-7E17CBE5E7BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AED0053-1E2B-4929-AA5D-7E17CBE5E7BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AED0053-1E2B-4929-AA5D-7E17CBE5E7BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AED0053-1E2B-4929-AA5D-7E17CBE5E7BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 EndGlobal
