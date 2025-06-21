@@ -7,6 +7,7 @@
 
         <IsPackable>false</IsPackable>
         <IsTestProject>true</IsTestProject>
+        <RootNamespace>Hydrator.Tests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -21,8 +22,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Hydrator\Hydrator.csproj" />
-      <ProjectReference Include="..\src\Hydrator\Hydrator.csproj" />
+      <ProjectReference Include="..\Hydrator.DependencyInjection.Tests.ProjectWithCorrectConfiguration\Hydrator.Tests.ProjectWithCorrectConfiguration.csproj" />
+      <ProjectReference Include="..\Hydrator.DependencyInjection.Tests.ProjectWithMissingRegisteredDependency\Hydrator.Tests.ProjectWithMissingRegisteredDependency.csproj" />
+      <ProjectReference Include="..\Hydrator.DependencyInjection.Tests.ProjectWithOneMissingHandler\Hydrator.Tests.ProjectWithOneMissingHandler.csproj" />
     </ItemGroup>
+    
+
 
 </Project>
