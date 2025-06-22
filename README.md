@@ -3,8 +3,8 @@
 More information on the [Wiki](https://github.com/juliocachaydev/dtoHydrator/wiki/1.-Home)
 
 ## Overview
-A C# library that hydrates a DTO using the Separation of Concerns (SoC) principle, 
-where each handler is responsible for hydrating a specific part of the DTO. Multiple handlers 
+A C# library that hydrates a DTO using the Separation of Concerns (SoC) principle,
+where each handler is responsible for hydrating a specific part of the DTO. Multiple handlers
 can contribute to the hydration process, ensuring modular and maintainable code.
 
 ## Problem to solve
@@ -99,8 +99,6 @@ public interface ILowPriorityExample : IHydratableValue
 
 ### Use the Hydrators to tell the library which values should be populated
 
-The selected text contains a minor grammatical error and could be clearer. Here is a revised version:
-
 The code below indicates that the DtoExample is can be hydrated with two different Hydrators, as shown above,
 the first one sets the Dividend and Divisor and the second one calculates the Quotient.
 
@@ -140,19 +138,19 @@ public class DtoExample :
 ## Important Considerations
 The Hydrator Service is registered with a scoped lifetime, meaning a new instance is created for each request.
 
-A typical pattern is to use a scoped cache service to load all necessary data up front. This cache can then be injected into each hydrator 
+A typical pattern is to use a scoped cache service to load all necessary data up front. This cache can then be injected into each hydrator
 handler, enabling efficient data access and reducing repeated database queries.
 
 ## Use Cases
 
 ### Avoid Duplicating Logic
-Often, the same value needs to be mapped in multiple locations. For example, an entity’s name, such as a customer name, might be required in invoices, 
+Often, the same value needs to be mapped in multiple locations. For example, an entity’s name, such as a customer name, might be required in invoices,
 orders, statements, and more.
 
 By using this library, you can implement a single handler to hydrate the customer name and reuse it wherever needed, eliminating redundant logic.
 
 ### Allow complex ViewModel building
-For complex view-models with multiple nested DTOs or advanced calculations, this library enables you to break down the hydration process into several 
+For complex view-models with multiple nested DTOs or advanced calculations, this library enables you to break down the hydration process into several
 handlers. Each handler manages a specific aspect of the view-model, promoting modularity and easier maintenance.
 
 ## Examples

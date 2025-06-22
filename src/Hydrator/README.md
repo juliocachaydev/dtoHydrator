@@ -99,8 +99,6 @@ public interface ILowPriorityExample : IHydratableValue
 
 ### Use the Hydrators to tell the library which values should be populated
 
-The selected text contains a minor grammatical error and could be clearer. Here is a revised version:
-
 The code below indicates that the DtoExample is can be hydrated with two different Hydrators, as shown above,
 the first one sets the Dividend and Divisor and the second one calculates the Quotient.
 
