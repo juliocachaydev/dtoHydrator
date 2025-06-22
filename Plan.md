@@ -3,4 +3,4 @@
 - [x] H03-Write Tests
 - [x] H04-Implement
 - [x] H05-Write Documentation and Example
-- [ ] H06-Push to Nuget
+- [x] H06-Push to Nuget
