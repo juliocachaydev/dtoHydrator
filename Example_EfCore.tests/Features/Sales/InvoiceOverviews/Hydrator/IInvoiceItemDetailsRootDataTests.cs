@@ -34,7 +34,7 @@ public class IInvoiceItemDetailsRootDataTests
 
         var sut = CreateSut();
 
-        var invoice = new Invoice(invoiceId);
+        var invoice = new Invoice(invoiceId, Guid.NewGuid());
 
         var line1Id = Guid.NewGuid();
         var line2Id = Guid.NewGuid();

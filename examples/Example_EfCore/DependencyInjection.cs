@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Example_EfCore.Features.Sales;
+using Example_EfCore.Features.Sales.InvoiceList;
 using Example_EfCore.Features.Sales.InvoiceOverviews;
 using Example_EfCore.Infrastructure;
 using Hydrator.Api;
@@ -19,6 +20,8 @@ public static class DependencyInjection
         services.AddScoped<IInvoiceOverviewQuery, IInvoiceOverviewQuery.Imp>();
 
         services.AddScoped<IInvoiceOverviewsContext, IInvoiceOverviewsContext.Imp>();
+
+        services.AddScoped<IInvoiceListQuery, IInvoiceListQuery.Imp>();
         
         services.AddHydrator(Assembly.GetExecutingAssembly());
     }

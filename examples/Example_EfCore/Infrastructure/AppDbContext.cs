@@ -12,6 +12,8 @@ public class AppDbContext : DbContext
 
     public DbSet<Shipment> Shipments { get; set; }
     
+    public DbSet<Customer> Customers { get; set; }
+    
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
     {

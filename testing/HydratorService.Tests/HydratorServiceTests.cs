@@ -41,4 +41,21 @@ public class HydratorServiceTests : DiContainerTestBase
 
         Assert.Equal(dto.Dividend / dto.Divisor, dto.Quotient);
     }
+
+    public class DemoUseCase
+    {
+        private readonly IHydratorService _hydrator;
+
+        public DemoUseCase(IHydratorService hydrator)
+        {
+            _hydrator = hydrator;
+        }
+        
+        public async Task<DtoExample> GetDtoAsync()
+        {
+            var dto = new DtoExample();
+            await _hydrator.HydrateAsync(dto);
+            return dto;
+        }
+    }
 }

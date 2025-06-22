@@ -17,7 +17,7 @@ public class InvoiceOverviewQueryTests
     {
         _contextMock = new();
         _contextMock.Setup(x => x.Invoice)
-            .Returns(new Invoice(Guid.NewGuid()));
+            .Returns(new Invoice(Guid.NewGuid(), Guid.NewGuid()));
         
         // Make sure collections are not null
         _contextMock.Setup(x => x.Payments)
@@ -52,7 +52,7 @@ public class InvoiceOverviewQueryTests
 
         // The loader has one invoice pre-loaded
         _contextMock.Setup(x =>
-            x.Invoice).Returns(new Invoice(invoiceId));
+            x.Invoice).Returns(new Invoice(invoiceId, Guid.NewGuid()));
 
         // ***** ACT *****
         
@@ -79,7 +79,7 @@ public class InvoiceOverviewQueryTests
 
         // The loader has one invoice pre-loaded
         _contextMock.Setup(x =>
-            x.Invoice).Returns(new Invoice(invoiceId));
+            x.Invoice).Returns(new Invoice(invoiceId, Guid.NewGuid()));
 
         var itemDetail1 = new InvoiceItemDetail
         {
