@@ -1,7 +1,7 @@
 ﻿namespace HydratorService.Tests;
 
-public class DtoExample : HighPriorityHydraterExample.IHighPriorityExample,
-    LowPriorityHydraterExample.ILowPriorityExample
+public class DtoExample : IHighPriorityExample,
+    ILowPriorityExample
 {
     public decimal Dividend { get; set; }
     public decimal Divisor { get; set; }

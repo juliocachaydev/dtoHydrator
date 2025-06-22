@@ -21,10 +21,43 @@ public interface IMockDataService
             _db.Invoices.RemoveRange(_db.Invoices.Include(e => e.Lines).ToArray());
             _db.Payments.RemoveRange(_db.Payments.ToArray());
             _db.Shipments.RemoveRange(_db.Shipments.ToArray());
+            _db.Customers.RemoveRange(_db.Customers.ToArray());
+            await _db.SaveChangesAsync();
+            
+            var customerNames = new string[]
+            {
+                "Acme Corporation",
+                "Globex Corporation",
+                "Initech",
+                "Umbrella Corporation",
+                "Hooli",
+                "Stark Industries"
+            };
+            foreach (var name in customerNames)
+            {
+                var customerId = await AddCustomer(name);
+                await AddInvoice(customerId);
+                await AddInvoice(customerId);
+            }
+        }
+
+        private async Task<Guid> AddCustomer(string name)
+        {
+            var customer = new Customer(Guid.NewGuid(), name);
+
+            _db.Customers.Add(customer);
+            await _db.SaveChangesAsync();
+
+            return customer.Id;
+        }
+
+        private async Task AddInvoice(Guid customerId)
+        {
+            
             
             await _db.SaveChangesAsync();
             
-            var invoice = new Invoice(Guid.NewGuid());
+            var invoice = new Invoice(Guid.NewGuid(), customerId);
             
             invoice.AddLine(Guid.NewGuid(), "Bolt #4 x box of 100", 100, 9.99m);
             invoice.AddLine(Guid.NewGuid(), "Nut #4 x box of 100", 50, 4.99m);

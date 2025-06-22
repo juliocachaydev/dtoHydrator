@@ -4,6 +4,8 @@ public class Invoice
 {
     public Guid Id { get; private set; }
 
+    public Guid CustomerId { get; private set; }
+
     public IEnumerable<InvoiceLine> Lines { get; private set; } = new List<InvoiceLine>();
 
     // Ef Core
@@ -12,9 +14,10 @@ public class Invoice
         
     }
 
-    public Invoice(Guid id)
+    public Invoice(Guid id, Guid customerId)
     {
         Id = id;
+        CustomerId = customerId;
     }
     
     public void AddLine(Guid lineId, string productName, int quantity, decimal unitPrice)

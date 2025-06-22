@@ -1,4 +1,5 @@
 ﻿using Example_EfCore.Features.Sales;
+using Example_EfCore.Features.Sales.InvoiceList;
 using Example_EfCore.Features.Sales.InvoiceOverviews;
 using Example_EfCore.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
@@ -10,11 +11,22 @@ namespace Example_EfCore.Controllers;
 public class InvoicesController : ControllerBase
 {
     private readonly IInvoiceOverviewQuery _invoiceOverviewQuery;
+    private readonly IInvoiceListQuery _invoiceListQuery;
 
     public InvoicesController(
-        IInvoiceOverviewQuery invoiceOverviewQuery)
+        IInvoiceOverviewQuery invoiceOverviewQuery,
+        IInvoiceListQuery invoiceListQuery)
     {
         _invoiceOverviewQuery = invoiceOverviewQuery;
+        _invoiceListQuery = invoiceListQuery;
+    }
+
+    [HttpGet]
+    public async Task<ActionResult<InvoiceListViewModel>> GetInvoiceList()
+    {
+        var result = await _invoiceListQuery.GetInvoiceListAsync();
+
+        return Ok(result);
     }
     
 
