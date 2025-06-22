@@ -1,5 +1,7 @@
 # Dto Hydrator
 
+More information on the [Wiki](https://github.com/juliocachaydev/dtoHydrator/wiki/1.-Home)
+
 ## Overview
 A C# library that hydrates a DTO using the Separation of Concerns (SoC) principle, 
 where each handler is responsible for hydrating a specific part of the DTO. Multiple handlers 
@@ -22,7 +24,7 @@ handler can receive dependencies through dependency injection, making it easy to
 - Dependency injection support
 
 ## Getting Started
-> TODO: Add nuget here...
+> dotnet add package DtoHydrator --version 1.0.0
 
 ## Usage
 ### Setup the DI Container
